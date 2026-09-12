@@ -1,0 +1,18 @@
+{
+  "name": "JIL MSR Reporting",
+  "short_name": "MSR Reporting",
+  "description": "Monthly Status Reporting for JIL Rotorua, Tokoroa and Taupo",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbfcf8",
+  "theme_color": "#173f35",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173f35">
+  <title>JIL MSR Reporting</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg">
+  <style>
+    *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;background:#173f35;font-family:Arial,sans-serif}
+    .bar{height:42px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+    iframe{display:block;width:100%;height:calc(100% - 42px);border:0;background:#fbfcf8}
+    .offline{display:none;position:fixed;inset:42px 0 0;padding:40px 22px;background:#fbfcf8;color:#173f35;text-align:center}
+    body.offline .offline{display:block}body.offline iframe{display:none}
+  </style>
+</head>
+<body>
+  <div class="bar">JIL Rotorua • Tokoroa • Taupo</div>
+  <iframe title="MSR Reporting" allow="clipboard-read; clipboard-write" src="https://script.google.com/macros/s/AKfycbxE88pBBg4xu_A4YaLxrp_lEQGnn5XW4HvgeNCfxd6Eb_3s_TPePwqSP_Zo9zyNRVCL/exec"></iframe>
+  <div class="offline"><h2>Internet connection required</h2><p>Please reconnect, then open the MSR Reporting app again.</p></div>
+  <script>
+    function status(){document.body.classList.toggle('offline',!navigator.onLine)}
+    addEventListener('online',status);addEventListener('offline',status);status();
+    if('serviceWorker' in navigator)navigator.serviceWorker.register('./service-worker.js');
+  </script>
+</body>
+</html>
